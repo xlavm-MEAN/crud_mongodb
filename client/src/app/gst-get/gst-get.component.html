@@ -1,0 +1,42 @@
+<input class="form-control" type="text" name="search" placeholder="Search" [(ngModel)]="filter">
+
+<br>
+
+
+<table class="table table-bordered">
+    <thead style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:rgb(81, 81, 207)">
+        <tr>
+            <td> Serial </td>
+            <td> brand </td>
+            <td> model </td>
+            <td> ubication </td>
+            <td> price_shopping </td>
+            <td> receipt_shopping </td>
+            <td> creation_date </td>
+            <td> sale_date </td>
+            <td> seller_identification </td>
+            <td> state </td>
+            <td>Edit</td>
+            <td> Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let machine of machine  | filter:filter">
+            <td>{{machine.serial}}</td>
+            <td>{{machine.brand}}</td>
+            <td>{{machine.model}}</td>
+            <td>{{machine.ubication}}</td>
+            <td>{{machine.price_shopping}}</td>
+            <td>{{machine.receipt_shopping}}</td>
+            <td>{{machine.creation_date}}</td>
+            <td>{{machine.sale_date}}</td>
+            <td>{{machine.seller_identification}}</td>
+            <td>{{machine.state}}</td>
+            <td><a [routerLink]="['/machine/edit',machine._id]" class="btn btn-primary"><i class="far fa-edit"></i></a></td>
+            <td><a (click)="deleteMachine(machine._id)" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<button routerLink="/machine/create" class="btn btn-primary"><i class="fas fa-plus"></i>Add new</button> &nbsp;
+<button (click)="refresh()" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>

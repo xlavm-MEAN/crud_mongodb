@@ -1,0 +1,110 @@
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="gst_editForm" novalidate>
+            <div class="form-group">
+                <label class="col-md-4">Serial</label>
+                <input type="text" class="form-control" formControlName="serial" #serial [(ngModel)]="machine.serial" />
+            </div>
+            <div *ngIf="gst_editForm.controls['serial'].invalid && (gst_editForm.controls['serial'].dirty || gst_editForm.controls['serial'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_editForm.controls['serial'].errors.required">
+                    Serial is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Brand</label>
+                <input type="text" class="form-control" formControlName="brand" #brand [(ngModel)]="machine.brand" />
+            </div>
+            <div *ngIf="gst_editForm.controls['brand'].invalid && (gst_editForm.controls['brand'].dirty || gst_editForm.controls['brand'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_editForm.controls['brand'].errors.required">
+                    Brand is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Model</label>
+                <input type="text" class="form-control" formControlName="model" #model [(ngModel)]="machine.model" />
+            </div>
+            <div *ngIf="gst_editForm.controls['model'].invalid && (gst_editForm.controls['model'].dirty || gst_editForm.controls['model'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_editForm.controls['model'].errors.required">
+                    Model is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Ubication</label>
+                <input type="text" class="form-control" formControlName="ubication" #ubication [(ngModel)]="machine.ubication" />
+            </div>
+            <div *ngIf="gst_editForm.controls['ubication'].invalid && (gst_editForm.controls['ubication'].dirty || gst_editForm.controls['ubication'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_editForm.controls['ubication'].errors.required">
+                    Ubication is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Price Shopping</label>
+                <input type="text" class="form-control" formControlName="price_shopping" #price_shopping [(ngModel)]="machine.price_shopping" />
+            </div>
+            <div *ngIf="gst_editForm.controls['price_shopping'].invalid && (gst_editForm.controls['price_shopping'].dirty || gst_editForm.controls['price_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_editForm.controls['price_shopping'].errors.required">
+                    Price Shopping is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Receipt Shopping</label>
+                <input type="text" class="form-control" formControlName="receipt_shopping" #receipt_shopping [(ngModel)]="machine.receipt_shopping" />
+            </div>
+            <div *ngIf="gst_editForm.controls['receipt_shopping'].invalid && (gst_editForm.controls['receipt_shopping'].dirty || gst_editForm.controls['receipt_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_editForm.controls['receipt_shopping'].errors.required">
+                    Receipt Shopping is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Creation Date</label>
+                <input type="text" class="form-control" formControlName="creation_date" #creation_date [(ngModel)]="machine.creation_date" />
+            </div>
+            <div *ngIf="gst_editForm.controls['creation_date'].invalid && (gst_editForm.controls['creation_date'].dirty || gst_editForm.controls['creation_date'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_editForm.controls['creation_date'].errors.required">
+                    Creation Date is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Sale Date</label>
+                <input type="text" class="form-control" formControlName="sale_date" #sale_date [(ngModel)]="machine.sale_date" />
+            </div>
+            <div *ngIf="gst_editForm.controls['sale_date'].invalid && (gst_editForm.controls['sale_date'].dirty || gst_editForm.controls['sale_date'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_editForm.controls['sale_date'].errors.required">
+                    Sale Date is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Seller Identification</label>
+                <input type="text" class="form-control" formControlName="seller_identification" #seller_identification [(ngModel)]="machine.seller_identification" />
+            </div>
+            <div *ngIf="gst_editForm.controls['seller_identification'].invalid && (gst_editForm.controls['seller_identification'].dirty || gst_editForm.controls['seller_identification'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_editForm.controls['seller_identification'].errors.required">
+                    Seller Identification is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">State</label>
+                <input type="text" class="form-control" formControlName="state" #state [(ngModel)]="machine.state" />
+            </div>
+            <div *ngIf="gst_editForm.controls['state'].invalid && (gst_editForm.controls['state'].dirty || gst_editForm.controls['state'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_editForm.controls['state'].errors.required">
+                    state is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" (click)="updateMachine(serial.value,brand.value,model.value,ubication.value,price_shopping.value,receipt_shopping.value,creation_date.value,sale_date.value,seller_identification.value,state.value)" [disabled]="gst_editForm.invalid"
+                    class="btn btn-primary">Update machine</button>
+            </div>
+        </form>
+    </div>
+</div>

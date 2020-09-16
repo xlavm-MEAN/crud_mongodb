@@ -1,0 +1,126 @@
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="gst_addForm" novalidate>
+
+            <div class="form-group">
+                <label class="col-md-4">Serial</label>
+                <input type="text" class="form-control" formControlName="serial" #serial />
+            </div>
+            <div *ngIf="gst_addForm.controls['serial'].invalid && (gst_addForm.controls['serial'].dirty || gst_addForm.controls['serial'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['serial'].errors.required">
+                    Please Enter the serial
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Brand</label>
+                <input type="text" class="form-control" formControlName="brand" #brand />
+            </div>
+            <div *ngIf="gst_addForm.controls['brand'].invalid && (gst_addForm.controls['brand'].dirty || gst_addForm.controls['brand'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['brand'].errors.required">
+                    Please Enter the brand
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-4">Model</label>
+                <input type="text" class="form-control" formControlName="model" #model />
+            </div>
+            <div *ngIf="gst_addForm.controls['model'].invalid && (gst_addForm.controls['model'].dirty || gst_addForm.controls['model'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['model'].errors.required">
+                    Please Enter the model
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Ubication</label>
+                <input type="text" class="form-control" formControlName="ubication" #ubication />
+            </div>
+            <div *ngIf="gst_addForm.controls['ubication'].invalid && (gst_addForm.controls['ubication'].dirty || gst_addForm.controls['ubication'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['ubication'].errors.required">
+                    Please Enter the ubication
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Price Shopping</label>
+                <input type="text" class="form-control" formControlName="price_shopping" #price_shopping />
+            </div>
+            <div *ngIf="gst_addForm.controls['price_shopping'].invalid && (gst_addForm.controls['price_shopping'].dirty || gst_addForm.controls['price_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['price_shopping'].errors.required">
+                    Please Enter the priceshopping
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Receipt Shopping</label>
+                <input type="text" class="form-control" formControlName="receipt_shopping" #receipt_shopping />
+            </div>
+            <div *ngIf="gst_addForm.controls['receipt_shopping'].invalid && (gst_addForm.controls['receipt_shopping'].dirty || gst_addForm.controls['receipt_shopping'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['receipt_shopping'].errors.required">
+                    Please Enter the receipt shopping
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Creation Date</label>
+                <input type="text" class="form-control" formControlName="creation_date" #creation_date />
+            </div>
+            <div *ngIf="gst_addForm.controls['creation_date'].invalid && (gst_addForm.controls['creation_date'].dirty || gst_addForm.controls['creation_date'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['creation_date'].errors.required">
+                    Please Enter the creation date
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Sale Date</label>
+                <input type="text" class="form-control" formControlName="sale_date" #sale_date />
+            </div>
+            <div *ngIf="gst_addForm.controls['sale_date'].invalid && (gst_addForm.controls['sale_date'].dirty || gst_addForm.controls['sale_date'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['sale_date'].errors.required">
+                    Please Enter the sale date
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Seller Identification</label>
+                <input type="text" class="form-control" formControlName="seller_identification" #seller_identification />
+            </div>
+            <div *ngIf="gst_addForm.controls['seller_identification'].invalid && (gst_addForm.controls['seller_identification'].dirty || gst_addForm.controls['seller_identification'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['seller_identification'].errors.required">
+                    Please Enter the seller identification
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">State</label>
+                <input type="text" class="form-control" formControlName="state" #state />
+            </div>
+            <div *ngIf="gst_addForm.controls['state'].invalid && (gst_addForm.controls['state'].dirty || gst_addForm.controls['state'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['state'].errors.required">
+                    Please Enter the state
+                </div>
+            </div>
+            <!----
+            <div class="form-group">
+                <label class="col-md-4">Business GST Number </label>
+                <input type="text" class="form-control" formControlName="business_gst_number" minlength="8" #business_gst_number />
+            </div>
+            <div *ngIf="gst_addForm.controls['business_gst_number'].invalid && (gst_addForm.controls['business_gst_number'].dirty || gst_addForm.controls['business_gst_number'].touched)" class="alert alert-danger">
+                <div *ngIf="gst_addForm.controls['business_gst_number'].errors.required">
+                    Please enter the GST number
+                </div>
+                <div *ngIf="gst_addForm.controls['business_gst_number'].errors.minlength">
+                    please provide valid GST number
+                </div>
+            </div>
+            -->
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="addMachine(serial.value,brand.value,model.value,ubication.value,price_shopping.value,receipt_shopping.value,creation_date.value,sale_date.value,seller_identification.value,state.value)" [disabled]="!gst_addForm.valid || gst_addForm.pristine">Add Machine</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<p *ngIf="dataadded" class="alert alert-success">{{ msg }}</p>
